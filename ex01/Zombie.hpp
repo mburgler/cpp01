@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:59:05 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/27 21:26:38 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/27 22:18:08 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@
 
 class	Zombie {
 	private:
+		int nmb;
 		std::string name;
-		Zombie(void);
 	public:
-		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
 		void	announce( void );
+		void	name_and_nmb_setter(int i, std::string import_name);
 };
 
 //functions
-Zombie* newZombie( std::string name );
-void	randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 //Colour
 #define GREEN "\033[32m"

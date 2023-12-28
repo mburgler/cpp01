@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:59:41 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/27 19:12:49 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/27 21:26:47 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,17 @@
 
 Zombie* newZombie( std::string name )
 {
-    return (new Zombie );
+	Zombie* ret;
+
+	try
+	{
+		ret = new Zombie(name);
+	}
+	catch(const std::bad_alloc& err)
+	{
+		std::cerr << "zombie allocation failed";
+		std::exit(1);
+	}
+	
+    return (ret);
 }
