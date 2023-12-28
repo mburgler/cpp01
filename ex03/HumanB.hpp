@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 23:04:48 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/28 02:40:07 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/28 14:30:01 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 class HumanB {
 private:
 	std::string	name;
-	Weapon	weapon;
+	Weapon*	weapon;
 	HumanB();
 public:
 	HumanB(std::string name);
 	~HumanB();
 	void	attack(void);
-	void	setWeapon(Weapon& weapon);
+	void	setWeapon(Weapon &weapon);
 };
 
 #define BLUE "\033[34m"
