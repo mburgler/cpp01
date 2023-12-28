@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:59:44 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/27 22:20:35 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:19:29 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,32 @@ std::string	zombie_name(void)
 	std::string	name;
 
 	std::cout << "please enter a zombie name"<< std::endl;
-	getline(std::cin, name);
+	std::getline(std::cin, name);
 	return (name);
 }
 
-int	fancy_atoi(void)
-{
-	int	nmb;
-	std::string	input;
+int fancy_atoi(void) {
+    long nmb = 0;
+    std::string input;
 
-	if (std::getline(std::cin, input)) {
-	try {
-		nmb = std::stoi(input);
-	} catch (const std::invalid_argument& e) {
-		std::cerr << "not a number." << std::endl;
-		std::exit(1);
-	} catch (const std::out_of_range& e) {
-		std::cerr << "max/min int violated." << std::endl;
-		std::exit(1);
-	}
-	}
-	else
-		nmb = 0;
-	return(nmb);
+    if (std::getline(std::cin, input)) {
+        std::istringstream iss(input);
+        if (!(iss >> nmb)) {
+            std::cerr << "not a number." << std::endl;
+            std::exit(1);
+        }
+        char leftover;
+        if (iss >> leftover) {
+            std::cerr << "extra characters after number." << std::endl;
+            std::exit(1);
+        }
+        if (nmb < std::numeric_limits<int>::min() || nmb > std::numeric_limits<int>::max()) {
+            std::cerr << "number out of range for int." << std::endl;
+            std::exit(1);
+        }
+    }
+
+    return static_cast<int>(nmb);
 }
 
 int	main(void)

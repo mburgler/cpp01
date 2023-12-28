@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:59:05 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/27 22:18:08 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:19:55 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+#include <sstream>
+#include <limits>
 #include <string>
+#include <cstdlib>
 #include <new>
 
 class	Zombie {
