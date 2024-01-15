@@ -6,7 +6,7 @@
 #    By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 21:00:36 by mburgler          #+#    #+#              #
-#    Updated: 2023/12/28 15:46:55 by mburgler         ###   ########.fr        #
+#    Updated: 2023/12/28 20:39:54 by mburgler         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,19 @@ FLAGS    := -Wall -Wextra -Werror -std=c++98 -pedantic
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
+# standard compilation #
+
 SRCS        :=      Sed.cpp \
 						  main.cpp \
                           
 OBJS        := ${SRCS:.cpp=.o}
+
+# testing compilation #
+
+TEST_SRCS := Sed.cpp main_testing.cpp
+
+TEST_OBJS := ${TEST_SRCS:.cpp=.o}
+
 
 .cpp.o:
 	${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
@@ -57,11 +66,17 @@ clean:
 			@ echo "$(RED)deleting $(CYAN)$(NAME) $(CLR_RMV)objs "
 
 fclean:		clean
-			@ ${RM} ${NAME}
+			@ ${RM} ${NAME} $(NAME)_test
 			@ echo "$(RED)deleting $(CYAN)$(NAME) $(CLR_RMV)binary"
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+test: $(TEST_OBJS)
+	@echo "$(GREEN)Compiling for testing ${CLR_RMV}${CYAN}$(NAME)_test ${CLR_RMV}..."
+	$(CC) $(FLAGS) -o $(NAME)_test $(TEST_OBJS)
+	@echo "$(BLUE)### $(GREEN)$(NAME)_test created $(BLUE)###${CLR_RMV}"
+
+
+.PHONY:		all clean fclean re testing
 
 

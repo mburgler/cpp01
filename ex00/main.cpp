@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:59:44 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/27 21:37:48 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:56:55 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std::string	zombie_name(void)
 	std::string	name;
 
 	std::cout << "please enter a zombie name"<< std::endl;
-	getline(std::cin, name);
+	std::getline(std::cin, name);
 	return (name);
 }
 

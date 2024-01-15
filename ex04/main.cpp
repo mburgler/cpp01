@@ -6,7 +6,7 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 14:36:23 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/28 16:17:21 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:21:16 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main(int argc, char** argv)
 			"try " << argv[0] << " <filename> <s1> <s2>\n" RESET;
 		std::exit(1);
 	}
-	Sed	sed = Sed(argv[1], argv[2], argv[3]);
-	sed.errorchecker();
+	Sed	sed(argv[1], argv[2], argv[3]);
+	sed.errorChecker();
+	sed.fileHandler();
+	sed.runCore();
+	sed.fileCloser();
 }

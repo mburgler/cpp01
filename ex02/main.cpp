@@ -6,13 +6,14 @@
 /*   By: mburgler <mburgler@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 22:31:26 by mburgler          #+#    #+#             */
-/*   Updated: 2023/12/27 22:51:19 by mburgler         ###   ########.fr       */
+/*   Updated: 2023/12/28 14:33:06 by mburgler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstddef>
 
 int	main(void)
 {
