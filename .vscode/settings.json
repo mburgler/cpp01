@@ -54,6 +54,9 @@
 		"typeinfo": "cpp",
 		"unordered_map": "cpp",
 		"variant": "cpp",
-		"algorithm": "cpp"
+		"algorithm": "cpp",
+		"__tree": "cpp",
+		"fstream": "cpp",
+		"map": "cpp"
 	}
 }
